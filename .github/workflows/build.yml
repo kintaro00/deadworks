@@ -163,6 +163,8 @@ jobs:
         with:
           context: docker
           push: true
-          build-args: DEADWORKS_VERSION=${{ github.ref_name }}
+          build-args: |
+            DEADWORKS_VERSION=${{ github.ref_name }}
+            DEADWORKS_REPO=${{ github.repository }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
